@@ -4,15 +4,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./components/Login";
 import "./styles.scss";
 
-function App() {
+import PrivateRoute from './tools/PrivateRoute'
+import BubblePage from './components/BubblePage'
+ function App() {
   return (
     <Router>
       <div className="App">
         <Route exact path="/" component={Login} />
-        {/* 
-          Build a PrivateRoute component that will 
-          display BubblePage when you're authenticated 
-        */}
+        <PrivateRoute path='/bubblespage' component={BubblePage}/>
       </div>
     </Router>
   );
