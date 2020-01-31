@@ -10,7 +10,7 @@ const BubblePage = () => {
   // set that data to the colorList state property
 
   useEffect(() => {
-    console.log('axios exists')
+    // console.log('axios exists')
     axiosWithAuth()
       .get("http://localhost:5000/api/colors", localStorage.getItem('token'))
       .then(res => {
@@ -25,7 +25,7 @@ const BubblePage = () => {
   return (
     <>
       <ColorList colors={colorList} updateColors={setColorList} />
-      <Bubbles colors={colorList} />
+      <Bubbles colors={colorList}/>
 
       {/* <p>i exist and im the bubbles page</p> */}
     </>
